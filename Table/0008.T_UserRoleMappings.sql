@@ -14,11 +14,11 @@ GO
 CREATE TABLE [dbo].[T_UserRoleMappings] 
 (
 	[C_MapID] INT IDENTITY(1,1)Primary Key,
-	[C_UserID] INT NOT NULL,
+	[C_RegisterID] INT NOT NULL,
 	[C_RoleID] INT NOT NULL,
 	[C_LastModified] DATETIME NOT NULL,
 
 	--Foreign Key--
-	CONSTRAINT FK_T_UserRoleMappings_T_Users FOREIGN KEY (C_UserID) REFERENCES  [dbo].[T_Users](C_UserID),
+	CONSTRAINT FK_T_UserRoleMappings_T_Registrations FOREIGN KEY (C_RegisterID) REFERENCES [dbo].[T_Registrations](C_RegisterID),
 	CONSTRAINT FK_T_UserRoleMappings_T_Roles FOREIGN KEY (C_RoleID) REFERENCES [dbo].[T_Roles](C_RoleID)
 )
