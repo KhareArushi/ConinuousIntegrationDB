@@ -2,7 +2,7 @@
 --------------------------------------------------------------------------------------------------
 ---Who: Arushi Khare
 ---Date: 3/2/2016
----Description: Details of Stored Procedure for GetAllProjects
+---Description: Details of Stored Procedure to show projectlist according to roles
 --------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------
 --Check if Stored Procedure exists
@@ -26,7 +26,7 @@ BEGIN
 	
 	 IF(@Rid = (Select C_RoleID from T_Roles WHERE C_RoleName='Admin'))
 	 BEGIN
-			SELECT C_ProjectID,C_ProjectName,C_ProjectDescription,C_LastModified FROM T_Projects;
+		SELECT C_ProjectID,C_ProjectName,C_ProjectDescription,C_LastModified FROM T_Projects;
 	 END 
 	 ELSE
 	 BEGIN

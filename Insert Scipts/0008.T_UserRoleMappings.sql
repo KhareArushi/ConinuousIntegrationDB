@@ -8,28 +8,28 @@
 
 
 --INSERT INTO TABLE
-INSERT INTO [dbo].[T_UserRoleMappings]([C_UserID],[C_RoleID],[C_LastModified]) 
-VALUES((SELECT C_UserID FROM T_Users WHERE C_UserName = 'Ashish'),
+INSERT INTO [dbo].[T_UserRoleMappings]([C_RegisterID],[C_RoleID],[C_LastModified]) 
+VALUES((SELECT C_RegisterID FROM T_Registrations WHERE C_FirstName = 'Ashish'),
 (SELECT C_RoleID FROM T_Roles WHERE C_RoleName = 'Admin'),
 CURRENT_TIMESTAMP)
 
-INSERT INTO [dbo].[T_UserRoleMappings]([C_UserID],[C_RoleID],[C_LastModified]) 
-VALUES((SELECT C_UserID FROM T_Users WHERE C_UserName = 'Arushi'),
+INSERT INTO [dbo].[T_UserRoleMappings]([C_RegisterID],[C_RoleID],[C_LastModified]) 
+VALUES((SELECT C_RegisterID FROM T_Registrations WHERE C_FirstName = 'Arushi'),
 (SELECT C_RoleID FROM T_Roles WHERE C_RoleName = 'User'),
 CURRENT_TIMESTAMP)
 
-INSERT INTO [dbo].[T_UserRoleMappings]([C_UserID],[C_RoleID],[C_LastModified]) 
-VALUES((SELECT C_UserID FROM T_Users WHERE C_UserName = 'Keyur'),
+INSERT INTO [dbo].[T_UserRoleMappings]([C_RegisterID],[C_RoleID],[C_LastModified]) 
+VALUES((SELECT C_RegisterID FROM T_Registrations WHERE C_FirstName = 'Keyur'),
 (SELECT C_RoleID FROM T_Roles WHERE C_RoleName = 'Admin'),
 CURRENT_TIMESTAMP)
 
-INSERT INTO [dbo].[T_UserRoleMappings]([C_UserID],[C_RoleID],[C_LastModified]) 
-VALUES((SELECT C_UserID FROM T_Users WHERE C_UserName= 'Krutika'),
+INSERT INTO [dbo].[T_UserRoleMappings]([C_RegisterID],[C_RoleID],[C_LastModified]) 
+VALUES((SELECT C_RegisterID FROM T_Registrations WHERE C_FirstName= 'Krutika'),
 (SELECT C_RoleID FROM T_Roles WHERE C_RoleName = 'User'),
 CURRENT_TIMESTAMP)
 
-INSERT INTO [dbo].[T_UserRoleMappings]([C_UserID],[C_RoleID],[C_LastModified]) 
-VALUES((SELECT C_UserID FROM T_Users WHERE C_UserName = 'Krutika'),
+INSERT INTO [dbo].[T_UserRoleMappings]([C_RegisterID],[C_RoleID],[C_LastModified]) 
+VALUES((SELECT C_RegisterID FROM T_Registrations WHERE C_FirstName = 'Krutika'),
 (SELECT C_RoleID FROM T_Roles WHERE C_RoleName = 'User'),
 CURRENT_TIMESTAMP)
 

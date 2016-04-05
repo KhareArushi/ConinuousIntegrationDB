@@ -15,7 +15,7 @@ CREATE TABLE [dbo].[T_UserProjectMappings]
 (
 	[C_MapID] INT IDENTITY(1,1)Primary Key,
 	[C_RegisterID] INT NOT NULL,
-	[C_ProjectID] INT NOT NULL,
+	[C_ProjectID] INT NULL,
 	[C_LastModified] DATETIME NOT NULL,
 
 	--Foreign Key--

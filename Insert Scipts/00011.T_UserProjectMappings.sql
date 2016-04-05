@@ -8,14 +8,12 @@
 
 
 --INSERT INTO TABLE
-INSERT INTO [dbo].[T_UserProjectMappings]([C_RegisterID],[C_ProjectID],[C_LastModified]) 
+INSERT INTO [dbo].[T_UserProjectMappings]([C_RegisterID],[C_LastModified]) 
 VALUES((SELECT C_RegisterID FROM T_Registrations WHERE C_FirstName = 'Ashish'),
-(SELECT C_ProjectID FROM T_Projects WHERE C_ProjectName = 'Progresso'),
 CURRENT_TIMESTAMP)
 
-INSERT INTO [dbo].[T_UserProjectMappings]([C_RegisterID],[C_ProjectID],[C_LastModified]) 
+INSERT INTO [dbo].[T_UserProjectMappings]([C_RegisterID],[C_LastModified]) 
 VALUES((SELECT C_RegisterID FROM T_Registrations WHERE C_FirstName = 'Keyur'),
-(SELECT C_ProjectID FROM T_Projects WHERE C_ProjectName = 'Candid'),
 CURRENT_TIMESTAMP)
 
 INSERT INTO [dbo].[T_UserProjectMappings]([C_RegisterID],[C_ProjectID],[C_LastModified]) 
