@@ -22,14 +22,16 @@ BEGIN
 
 --To get the projects according to roles
 	DECLARE @Rid INT
-	SELECT @Rid=C_RoleID from T_UserRoleMappings WHERE C_RegisterID=@UserId
 	
-	 IF(@Rid = (Select C_RoleID from T_Roles WHERE C_RoleName='Admin'))
+	SET @Rid=(SELECT C_RoleID from T_UserRoleMappings WHERE C_RegisterID=@UserId)
+	
+	
+	 IF(@Rid =(Select C_RoleID from T_Roles WHERE C_RoleName='Admin'))
 	 BEGIN
 		SELECT C_ProjectID,C_ProjectName,C_ProjectDescription,C_LastModified FROM T_Projects;
 	 END 
 	 ELSE
 	 BEGIN
-		SELECT C_ProjectID,C_ProjectName,C_ProjectDescription,C_LastModified FROM T_Projects WHERE C_ProjectID in (SELECT C_ProjectID FROM T_UserRoleMappings where C_RegisterID=@UserId)
+		SELECT C_ProjectID,C_ProjectName,C_ProjectDescription,C_LastModified FROM T_Projects WHERE C_ProjectID in (SELECT C_ProjectID FROM T_UserProjectMappings where C_RegisterID=@UserId)
 	 END
 END
